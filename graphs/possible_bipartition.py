@@ -5,8 +5,8 @@ def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: ?
-        Space Complexity: ?
+        Time Complexity: O(N + E)
+        Space Complexity: O(N)
 
         variation on a graph coloring problem
           - label dogs as group1 or group2
