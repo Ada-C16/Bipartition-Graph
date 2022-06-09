@@ -102,3 +102,13 @@ def test_will_return_false_for_another_graph_which_cannot_be_bipartitioned():
 
     # Assert
     assert not answer
+
+def test_will_return_false_for_another_graph_which_cannot_be_bipartitioned():
+    # Arrange
+    dislikes = [ [], [], [3,4], [2,4], [2,3] ]
+
+    # Act
+    answer = possible_bipartition(dislikes)
+
+    # Assert
+    assert not answer
