@@ -2,8 +2,8 @@ def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: ?
-        Space Complexity: ?
+        Time Complexity: O(E)
+        Space Complexity: O(E)
     """
     visited = set()
 
@@ -25,7 +25,6 @@ def possible_bipartition(dislikes):
                     return False
         
         return True
-
 
     for dog in range(l):
         if dog not in visited:
