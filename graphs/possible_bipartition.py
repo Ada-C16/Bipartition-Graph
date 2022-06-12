@@ -1,8 +1,3 @@
-# Can be used for BFS
-from collections import deque
-from dis import dis
-from pydoc import visiblename 
-
 def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
