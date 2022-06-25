@@ -14,6 +14,7 @@ def possible_bipartition(dislikes: list[list[int]]):
     # dfs recursively
 
     def dfs(node, group):
+        # if node has no group, assign node to group that was passed as argument
         if not group_assignment[node]:
             group_assignment[node] = group
         else:
