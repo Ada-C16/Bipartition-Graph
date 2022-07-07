@@ -8,5 +8,25 @@ def possible_bipartition(dislikes):
         Time Complexity: ?
         Space Complexity: ?
     """
-    pass
+    # Create an empty queue
+    dog_queue = deque()
+    kennel_a = []
+    kennel_b = []
+
+    # Add dogs to the queue
+    for dog in dislikes:
+        dog_queue.append(dog)
+
+    while len(dog_queue) != 0:
+    # Assign dog to check to current_dog
+        current_dog = dog_queue.pop()
+
+        if current_dog not in kennel_a:
+            kennel_a.append(current_dog)
+        elif current_dog not in kennel_b:
+            kennel_b.append(current_dog)
+        else:
+            return False
+
+    return True
 
