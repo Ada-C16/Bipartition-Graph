@@ -5,8 +5,8 @@ def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: ?
-        Space Complexity: ?
+        Time Complexity: O(N + E) where n = number of dogs and e = number of edges/dislikes between dogs
+        Space Complexity: O(N) where n = number of dogs
     """
     if not dislikes:
         return True
