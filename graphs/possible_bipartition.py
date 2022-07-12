@@ -56,7 +56,7 @@ Explanation: group1 [0, 1, 4], group2 [2, 3]
         edge = dislikes[node]
         graph[node] = edge 
     print(graph)
-    # BFS -> loop thorugh each tem and check it items are enemies 
+    # BFS -> loop thorugh each item and check if items are enemies 
 
     
     def bfs(queue, is_visited, node):
@@ -84,10 +84,3 @@ Explanation: group1 [0, 1, 4], group2 [2, 3]
         if not bfs(queue, is_visited, node):
             return False
     return True
-
-dislikes = [ [],
-            [2, 3],
-            [1, 3],
-            [1, 2]
-        ]
-print(possible_bipartition(dislikes))
