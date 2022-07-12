@@ -1,6 +1,7 @@
 # Can be used for BFS
-import collections 
+import collections
 from queue import Queue
+
 
 def possible_bipartition(dislikes):
     """ 
@@ -33,19 +34,19 @@ Explanation: group1 [0, 1, 4], group2 [2, 3]
             0           2
             1           3
             4
-    
+
     #  all items within the same set should be disjoint
     #  A bipartite graph can only have  even edge length cycle.
     #
-    
+
     Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: O(n) or O(v + E)
+        Time Complexity: O(v + E)
         Space Complexity: O(n)
     """
 
-    # each edge should be different collors 
+    # each edge should be a different collors
 
     if len(dislikes) == 0:
         return True
@@ -54,16 +55,16 @@ Explanation: group1 [0, 1, 4], group2 [2, 3]
     graph_items = len(dislikes)
     for node in range(graph_items):
         edge = dislikes[node]
-        graph[node] = edge 
+        graph[node] = edge
     print(graph)
-    # BFS -> loop thorugh each item and check if items are enemies 
+    # BFS -> loop thorugh each item and check if items are enemies
 
     def bfs(queue, is_visited, node):
-        queue.put((node,0))
+        queue.put((node, 0))
         while not queue.empty():
             curr, value = queue.get()
             if curr not in is_visited:
-                is_visited[curr] =0
+                is_visited[curr] = 0
             # for the neighbours
             for next_node in graph[curr]:
                 if next_node not in is_visited:
@@ -72,8 +73,8 @@ Explanation: group1 [0, 1, 4], group2 [2, 3]
                     queue.put((next_node, new_visited))
                 else:
                     # check if it is in the same group
-                    if  is_visited[curr] == is_visited[next_node]:
-                        # they are  supposed to be in different groups 
+                    if is_visited[curr] == is_visited[next_node]:
+                        # they are  supposed to be in different groups
                         return False
         return True
 
