@@ -15,7 +15,6 @@ def possible_bipartition(dislikes):
 
 
     groupings=[0 for _ in range(n)]
-    print(groupings)
 
     def group_dogs(dog, dislike_graph, groupings, group =1):
         if groupings[dog]:
@@ -35,4 +34,7 @@ def possible_bipartition(dislikes):
         if not group_dogs(dog,dislike_graph, groupings):
             return False
     return True
+
+
+
 
