@@ -56,7 +56,6 @@ Explanation: group1 [0, 1, 4], group2 [2, 3]
     for node in range(graph_items):
         edge = dislikes[node]
         graph[node] = edge
-    print(graph)
     # BFS -> loop thorugh each item and check if items are enemies
 
     def bfs(queue, is_visited, node):
