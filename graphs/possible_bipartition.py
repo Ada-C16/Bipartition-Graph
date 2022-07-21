@@ -5,8 +5,8 @@ def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: ?
-        Space Complexity: ?
+        Time Complexity: O(N+E) - each node and each edge will be explored
+        Space Complexity: O(N) - worst case - need to add each node to the Queue
     """
     if not dislikes:
         return True
