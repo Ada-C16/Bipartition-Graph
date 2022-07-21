@@ -22,9 +22,9 @@ def possible_bipartition(dislikes):
     group1 = set()
     group2 = set()
 
-    # So long as the queue is not empty, remove dog1
-    # Mark that dog1 has been checked
-    # if dog1 is not matched to a another hating ass dog, add the next dog to the queue
+    # So long as the queue is not empty, remove current dog
+    # Mark that current dog has been checked
+    # if dog is not matched to a another hating ass dog, add the next dog to the queue
     while queue:
         current = queue.popleft()
         checked[current] = True
@@ -32,7 +32,7 @@ def possible_bipartition(dislikes):
             queue.append(current + 1)
 
         # Loope through list of dogs. 
-        # If current dog has NOT been checked
+        # If the next dog has NOT been checked
         # Add it to the queue to be assigned
         for dog in dislikes[current]:
             if not checked[dog]:
