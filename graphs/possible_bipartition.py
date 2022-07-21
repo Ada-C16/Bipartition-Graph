@@ -5,8 +5,9 @@ def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: ?
-        Space Complexity: ?
+        Time Complexity: O(n * m) where n is the number of nodes/dogs 
+        and m is the number of edges
+        Space Complexity: O(n)
     """
     # PART 1: CREATE AN ADJACENCY LIST
     def createGraph(nodes):
@@ -18,6 +19,7 @@ def possible_bipartition(dislikes):
         return graph
 
     graph = createGraph(dislikes)
+
     visited = {}
 
     for i in range(len(dislikes)):
@@ -25,8 +27,6 @@ def possible_bipartition(dislikes):
             queue  = deque([(i, 1)])
             while queue:
                 dog, group = queue.popleft()
-                # print(f"node is {node}")
-                # print(f"group is {group}")
                 if dog in visited:
                     if group == visited[dog]:
                         continue
@@ -39,11 +39,3 @@ def possible_bipartition(dislikes):
         # print(visited)
     return True
 
-dislikes = [ [],
-      [2, 3],
-      [1, 4],
-      [1],
-      [2]
-    ]
-
-print(possible_bipartition(dislikes))
