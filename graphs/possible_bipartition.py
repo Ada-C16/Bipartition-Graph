@@ -26,9 +26,9 @@ def possible_bipartition(dislikes):
             kennel_a.append(current_dog)
         else:
             for i in range(len(current_dog_dislikes)-1):
-                if current_dog_dislikes[i] not in kennel_a:
+                if current_dog_dislikes[i] not in kennel_a and current_dog_dislikes[i+1] not in kennel_a:
                     kennel_a.append(current_dog)
-                elif current_dog_dislikes[i] not in kennel_b:
+                elif current_dog_dislikes[i] not in kennel_b and current_dog_dislikes[i+1] not in kennel_b:
                     kennel_b.append(current_dog)
                 else:
                     return False
