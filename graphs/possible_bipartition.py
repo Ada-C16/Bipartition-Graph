@@ -22,8 +22,12 @@ def possible_bipartition(dislikes):
         current_dog_dislikes = dog_queue.popleft()
         current_dog = dislikes.index(current_dog_dislikes)
 
-        if len(current_dog_dislikes) == 0:
+        # if len(current_dog_dislikes) == 0:
+        #     kennel_a.append(current_dog)
+        if len(kennel_a) == 0:
             kennel_a.append(current_dog)
+        elif len(kennel_b) == 0:
+            kennel_b.append(current_dog)
         else:
             for i in range(len(current_dog_dislikes)-1):
                 if current_dog_dislikes[i] not in kennel_a and current_dog_dislikes[i+1] not in kennel_a:
