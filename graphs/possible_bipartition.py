@@ -1,6 +1,6 @@
 # Can be used for BFS
 from collections import deque 
-import queue
+
 
 def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
