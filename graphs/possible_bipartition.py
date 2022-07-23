@@ -8,5 +8,30 @@ def possible_bipartition(dislikes):
         Time Complexity: ?
         Space Complexity: ?
     """
-    pass
+    if not dislikes:
+        return True
 
+    queue = deque()
+    visited = set()
+    group1 = set()
+    group2 = set()
+
+    queue.append(0)
+
+    while queue:
+        current = queue.popleft()
+        for neigbor_dog in dislikes[current]:
+            if neigbor_dog not in visited:
+                visited.add(neigbor_dog)
+                queue.append(neigbor_dog)
+                if current in group1:
+                    group2.add(neigbor_dog)
+                else:
+                    group1.add(neigbor_dog)
+            elif neigbor_dog in visited:
+                if current in group1 and neigbor_dog in group1:
+                    return False
+                if current in group2 and neigbor_dog in group2:
+                    return False
+
+    return True
