@@ -5,8 +5,8 @@ def possible_bipartition(dislikes):
     """ Will return True or False if the given graph
         can be bipartitioned without neighboring nodes put
         into the same partition.
-        Time Complexity: ?
-        Space Complexity: ?
+        Time Complexity: O(N + E) where N is the number of nodes in the graph and E is the number of edges.
+        Space Complexity: O(N) where N is the number of nodes in the graph.
     """
     grouped = {}
     dog_q=deque()
